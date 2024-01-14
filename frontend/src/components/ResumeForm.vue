@@ -14,8 +14,14 @@
     <label for="email">Phone:</label>
     <my-input placeholder="+(380) 95 154 0139" id="phone" />
     
-    <label></label>
-    <my-textarea></my-textarea>
+    <label for="summury">Summury: </label>
+    <my-textarea placeholder="Describe yourself" id="summury"></my-textarea>
+
+    <label for="education">Education: </label>
+    <my-textarea placeholder="GoIT" id="education"></my-textarea>
+    
+    <label for="experience">Work experience: </label>
+    <my-textarea placeholder="Project on GitHub" id="experience"></my-textarea>
   </form>
 </template>
 <script>
