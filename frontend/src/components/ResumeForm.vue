@@ -23,7 +23,10 @@
     <label for="experience">Work experience:</label>
     <my-textarea placeholder="Project on GitHub" id="experience"></my-textarea>
 
-    <my-multiselect placeholder="Write your skills"></my-multiselect>
+    <label for="skills">Skills:</label>
+    <my-multiselect placeholder="Write your skills" id="skills"></my-multiselect>
+
+    <my-button class="button">Create</my-button>
   </form>
 </template>
 <script>
@@ -46,4 +49,10 @@ export default {
     padding: 20px;
   }
 
+  .button {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 </style>

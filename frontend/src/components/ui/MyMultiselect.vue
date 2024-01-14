@@ -3,13 +3,16 @@
     <div class="selected-options" v-if="selectedOptions.length !== 0">
       <div class="selected-option" v-for="option in selectedOptions" :key="option.id">{{ option.value }}<span @click="removeOption(option.id)">X</span></div>
     </div>
-    <input type="text" :placeholder="placeholder" @keypress="selectOption">
+    <input type="text" :placeholder="placeholder" @keypress="selectOption" :id="id">
   </div>
 </template>
 <script>
 export default {
   name: 'my-multiselect',
   props: {
+    id: {
+      type: String,
+    },
     placeholder: {
       type: String,
     }
@@ -21,7 +24,7 @@ export default {
   },
   methods: {
     selectOption(e) {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' && e.target.value.trim() !== '') {
         const value = e.target.value;
         const option = {id: Date.now(), value };
         this.selectedOptions.push(option);
