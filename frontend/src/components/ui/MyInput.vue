@@ -1,9 +1,20 @@
 <template>
-  <input type="text">
+  <input :value="modelValue" type="text" @change="handleChange">
 </template>
 <script>
 export default {
-  name: 'my-input'
+  name: 'my-input',
+  props: {
+    modelValue: {
+      type: String,
+      required: true,
+    }
+  },
+  methods: {
+    handleChange(e) {
+      this.$emit('update:modelValue', e.target.value)
+    }
+  }
 }
 </script>
 <style scoped>

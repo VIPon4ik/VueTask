@@ -1,9 +1,9 @@
 <template>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <h1>Create your Resume</h1>
 
     <label for="name">*Name:</label>
-    <my-input placeholder="Jonh" id="name" />
+    <my-input v-model="name" placeholder="Jonh" id="name" />
 
     <label for="surname">*Surname:</label>
     <my-input placeholder="Smith" id="surname" />
@@ -31,6 +31,24 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      name:'',
+      surname:'',
+      email:'',
+      phone:'',
+      summury:'',
+      education:'',
+      experience: '',
+      selectedSkills: [],
+      resume: {}
+    }
+  },
+  methods: {
+    handleSubmit() {
+      console.log(`Name: ${this.name}`)
+    }
+  }
 }
 </script>
 <style scoped>
