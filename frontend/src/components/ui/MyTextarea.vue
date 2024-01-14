@@ -1,10 +1,21 @@
 <template>
-  <textarea>
+  <textarea :value="modelValue" @change="handleChange">
   </textarea>
 </template>
 <script>
 export default {
   name:'my-textarea',
+  props: {
+    modelValue: {
+      type: String,
+      required: false,
+    }
+  },
+  methods: {
+    handleChange(e) {
+      this.$emit('update:modelValue', e.target.value);
+    }
+  }
 }
 </script>
 <style>
