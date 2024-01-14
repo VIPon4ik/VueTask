@@ -15,11 +15,10 @@ export default {
     },
     placeholder: {
       type: String,
-    }
-  },
-  data () {
-    return {
-      selectedOptions: [],
+    },
+    selectedOptions: {
+      type:Array,
+      required: true,
     }
   },
   methods: {
@@ -27,12 +26,13 @@ export default {
       if (e.key === 'Enter' && e.target.value.trim() !== '') {
         const value = e.target.value;
         const option = {id: Date.now(), value };
-        this.selectedOptions.push(option);
+        this.$emit('update:selectedOptions', [...this.selectedOptions, option])
         e.target.value = ''
+        console.log(this.selectedOptions)
       }
     },
     removeOption(id) {
-      this.selectedOptions = this.selectedOptions.filter(option => option.id !== id);
+      this.$emit('update:selectedOptions', [...this.selectedOptions.filter(option => option.id !== id)]);
     }
   }
 }
