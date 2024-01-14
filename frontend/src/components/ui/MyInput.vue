@@ -6,7 +6,7 @@ export default {
   name: 'my-input'
 }
 </script>
-<style>
+<style scoped>
   input {
     width: 100%;
     padding: 0px 16px;

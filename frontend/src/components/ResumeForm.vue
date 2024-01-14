@@ -20,13 +20,14 @@
     <label for="education">Education: </label>
     <my-textarea placeholder="GoIT" id="education"></my-textarea>
     
-    <label for="experience">Work experience: </label>
+    <label for="experience">Work experience:</label>
     <my-textarea placeholder="Project on GitHub" id="experience"></my-textarea>
+
+    <my-multiselect placeholder="Write your skills"></my-multiselect>
   </form>
 </template>
 <script>
 export default {
-  
 }
 </script>
 <style scoped>
