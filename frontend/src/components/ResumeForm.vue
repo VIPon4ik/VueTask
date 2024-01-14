@@ -3,13 +3,13 @@
     <h1>Create your Resume</h1>
 
     <label for="name">*Name:</label>
-    <my-input v-model="name" placeholder="Jonh" id="name"  />
+    <my-input v-model="name" placeholder="Jonh" id="name" />
 
     <label for="surname">*Surname:</label>
-    <my-input v-model="surname" placeholder="Smith" id="surname"  />
+    <my-input v-model="surname" placeholder="Smith" id="surname" />
 
     <label for="email">*Email:</label>
-    <my-input v-model="email" placeholder="youremail@gmail.com" id="email" type="email"  />
+    <my-input v-model="email" placeholder="youremail@gmail.com" id="email" type="email" />
 
     <label for="email">Phone:</label>
     <my-input v-model="phone" placeholder="+(380) 95 154 0139" id="phone" />
@@ -53,9 +53,7 @@ export default {
         return;
       }
 
-      console.log(`summury: ${this.summury}`)
-      console.log(`selectedSkills: ${this.selectedSkills}`)
-      console.log(`Name: ${this.name}`)
+      this.resume = { name, surname, email, phone, summury, education, experience, selectedSkills }
     }
   }
 }
