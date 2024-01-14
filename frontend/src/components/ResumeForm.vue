@@ -3,28 +3,28 @@
     <h1>Create your Resume</h1>
 
     <label for="name">*Name:</label>
-    <my-input v-model="name" placeholder="Jonh" id="name" />
+    <my-input v-model="name" placeholder="Jonh" id="name" required />
 
     <label for="surname">*Surname:</label>
-    <my-input v-model="surname" placeholder="Smith" id="surname" />
+    <my-input v-model="surname" placeholder="Smith" id="surname" required />
 
     <label for="email">*Email:</label>
-    <my-input v-model="email" placeholder="youremail@gmail.com" id="email" type="email" />
+    <my-input v-model="email" placeholder="youremail@gmail.com" id="email" type="email" required />
 
-    <label for="email">Phone:</label>
+    <label for="phone">Phone:</label>
     <my-input v-model="phone" placeholder="+(380) 95 154 0139" id="phone" />
 
     <label for="summury">Summury: </label>
-    <my-textarea v-model="summury" placeholder="Describe yourself" id="summury"></my-textarea>
+    <my-textarea v-model="summury" placeholder="Describe yourself" id="summury" required></my-textarea>
 
     <label for="education">Education: </label>
-    <my-textarea placeholder="GoIT" id="education"></my-textarea>
+    <my-textarea v-model="education" placeholder="GoIT" id="education"></my-textarea>
 
     <label for="experience">Work experience:</label>
-    <my-textarea placeholder="Project on GitHub" id="experience"></my-textarea>
+    <my-textarea v-model="experience" placeholder="Project on GitHub" id="experience"></my-textarea>
 
     <label for="skills">Skills:</label>
-    <my-multiselect ref="multiselect" v-model:selectedOptions="selectedSkills" placeholder="Write your skills"
+    <my-multiselect ref="multiselect" v-model:selectedOptions="skills" placeholder="Write your skills"
       id="skills"></my-multiselect>
 
     <my-button class="button">Create</my-button>
@@ -41,12 +41,12 @@ export default {
       summury: '',
       education: '',
       experience: '',
-      selectedSkills: [],
+      skills: [],
       resume: {}
     }
   },
   methods: {
-    handleSubmit() {
+    handleSubmit(e) {
       const multiselectHasFocus = this.$refs.multiselect && this.$refs.multiselect.$el.contains(document.activeElement);
 
       if (multiselectHasFocus) {
@@ -61,9 +61,11 @@ export default {
         summury: this.summury,
         education: this.education,
         experience: this.experience,
-        selectedSkills: this.selectedSkills
+        skills: this.skills
       }
       this.$emit('resume', this.resume)
+      this.skills = []
+      e.target.reset()
     }
   }
 }

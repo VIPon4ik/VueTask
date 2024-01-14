@@ -1,34 +1,28 @@
 <template>
   <div class="container">
     <section class="hero-section">
-      <h1>Dmytro Perep</h1>
+      <h1>{{ resume.name }} {{ resume.surname }}</h1>
       <h2>Summury: </h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus pariatur eius cupiditate laborum dolores
-        porro quaerat recusandae, consectetur ex sapiente fugiat libero dignissimos laboriosam accusantium tempora natus
-        eligendi incidunt numquam.</p>
+      <p>{{ resume.summury }}</p>
     </section>
     <section class="personal-section">
       <h2>Contacts: </h2>
-      <p>Email: </p>
-      <p>Phone: </p>
+      <p>Email: {{ resume.email }} </p>
+      <p v-if="resume.phone">Phone: {{ resume.phone }} </p>
     </section>
-    <section class="education-section">
+    <section class="education-section" v-if="resume.education">
       <h2>Education: </h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta sequi rerum pariatur voluptatem quos fuga, illum
-        neque perspiciatis incidunt explicabo enim praesentium asperiores earum accusamus laborum expedita sapiente sint
-        labore.</p>
+      <p>{{ resume.education }}</p>
     </section>
-    <section class="experience-section">
+    <section class="experience-section" v-if="resume.experience">
       <h2>Work Experience: </h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut dolorem, fuga quas consequuntur dignissimos harum
-        accusantium provident, aperiam mollitia repudiandae laboriosam aspernatur quae ipsam? Voluptatum error quo tenetur
-        vero odit.</p>
+      <p>{{ resume.experience }}</p>
     </section>
-    <section class="skills-section">
+    <section class="skills-section" v-if="resume.skills.length > 0">
       <h2>Skills: </h2>
       <ul>
-        <li>
-          <h3>Skill3</h3>
+        <li v-for="skill in resume.skills">
+          <h3>{{ skill.value }}</h3>
         </li>
       </ul>
     </section>
@@ -82,4 +76,5 @@ ul li:before {
   content: "•";
   font-size: 30px;
   padding-right: 5px;
-}</style>
+}
+</style>

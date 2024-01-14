@@ -28,7 +28,6 @@ export default {
         const option = {id: Date.now(), value };
         this.$emit('update:selectedOptions', [...this.selectedOptions, option])
         e.target.value = ''
-        console.log(this.selectedOptions)
       }
     },
     removeOption(id) {

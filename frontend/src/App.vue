@@ -1,7 +1,7 @@
 <template>
   <main>
     <resume-form @resume="setResume"></resume-form>
-    <resume @resume="resume" v-if="Object.keys(resume).length !== 0"></resume>
+    <resume :resume="resume" v-if="Object.keys(resume).length > 0"></resume>
   </main>
 </template>
 <script>
@@ -20,7 +20,7 @@ export default {
     setResume(resume) {
       this.resume = resume;
     }
-  }
+  },
 }
 </script>
 <style scoped>
