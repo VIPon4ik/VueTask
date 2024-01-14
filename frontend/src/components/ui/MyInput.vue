@@ -1,5 +1,5 @@
 <template>
-  <input type="text" placeholder="some text">
+  <input type="text">
 </template>
 <script>
 export default {
@@ -15,6 +15,7 @@ export default {
     background-color: rgb(228, 234, 247);
     outline: none;
     color: rgb(61,61,61);
+    margin: 8px 0;
   }
   
   input::placeholder {
