@@ -53,7 +53,17 @@ export default {
         return;
       }
 
-      this.resume = { name, surname, email, phone, summury, education, experience, selectedSkills }
+      this.resume = {
+        name: this.name,
+        surname: this.surname,
+        email: this.email,
+        phone: this.phone,
+        summury: this.summury,
+        education: this.education,
+        experience: this.experience,
+        selectedSkills: this.selectedSkills
+      }
+      this.$emit('resume', this.resume)
     }
   }
 }

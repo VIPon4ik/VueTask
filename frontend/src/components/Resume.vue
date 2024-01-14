@@ -27,7 +27,9 @@
     <section class="skills-section">
       <h2>Skills: </h2>
       <ul>
-        <li><h3>Skill3</h3></li>
+        <li>
+          <h3>Skill3</h3>
+        </li>
       </ul>
     </section>
   </div>
@@ -48,7 +50,7 @@ export default {
   padding: 40px 120px;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 section:not(:last-child) {
@@ -66,8 +68,9 @@ h2 {
   background-color: rgb(131, 131, 131);
   padding: 10px;
 }
+
 ul {
-   list-style: none;
+  list-style: none;
 }
 
 li {
@@ -76,8 +79,7 @@ li {
 }
 
 ul li:before {
-   content: "•";
-   font-size: 30px;
-   padding-right: 5px;
-}
-</style>
+  content: "•";
+  font-size: 30px;
+  padding-right: 5px;
+}</style>
