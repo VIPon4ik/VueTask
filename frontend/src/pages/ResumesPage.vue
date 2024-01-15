@@ -21,7 +21,6 @@ export default {
       this.isLoading = true;
       const response = await axios.get('http://localhost:3200/api/resumes/');
       this.resumes = response.data.data.resumes;
-      console.log(this.resumes);
     } catch(e) {
       console.log(e);
     }
