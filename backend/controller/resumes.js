@@ -1,27 +1,9 @@
 const service = require("../service/resume");
 
 const create = async (req, res, next) => {
-    const {
-        name,
-        surname,
-        email,
-        phone,
-        summury,
-        education,
-        experience,
-        skills,
-    } = req.body;
+    const { resume } = req.body;
     try {
-        const result = await service.createResume({
-            name,
-            surname,
-            email,
-            phone,
-            summury,
-            education,
-            experience,
-            skills,
-        });
+        const result = await service.createResume(resume);
         res.status(201).json({
             status: "success",
             code: 201,

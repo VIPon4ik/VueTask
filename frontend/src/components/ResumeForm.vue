@@ -31,6 +31,7 @@
   </form>
 </template>
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -46,7 +47,7 @@ export default {
     }
   },
   methods: {
-    handleSubmit(e) {
+    async handleSubmit(e) {
       const multiselectHasFocus = this.$refs.multiselect && this.$refs.multiselect.$el.contains(document.activeElement);
 
       if (multiselectHasFocus) {
@@ -63,6 +64,11 @@ export default {
         experience: this.experience,
         skills: this.skills
       }
+
+      await axios.post('http://localhost:3200/api/resumes/', {
+        resume: this.resume,
+      })
+
       this.$emit('resume', this.resume)
       this.skills = []
       e.target.reset()
