@@ -20,9 +20,9 @@ const resume = new Schema(
         },
         phone: {
             type: String,
-            minLength: 8,
         },
         summury: {
+            type: String,
             minLength: 2,
             required: true,
         },

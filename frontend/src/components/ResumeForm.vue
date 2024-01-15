@@ -3,19 +3,19 @@
     <h1>Create your Resume</h1>
 
     <label for="name">*Name:</label>
-    <my-input v-model="name" placeholder="Jonh" id="name" required />
+    <my-input v-model="name" placeholder="Jonh" id="name" required minlength="2"/>
 
     <label for="surname">*Surname:</label>
-    <my-input v-model="surname" placeholder="Smith" id="surname" required />
+    <my-input v-model="surname" placeholder="Smith" id="surname" required minlength="2"/>
 
     <label for="email">*Email:</label>
-    <my-input v-model="email" placeholder="youremail@gmail.com" id="email" type="email" required />
+    <my-input v-model="email" placeholder="youremail@gmail.com" id="email" type="email" required minlength="10" />
 
     <label for="phone">Phone:</label>
     <my-input v-model="phone" placeholder="+(380) 95 154 0139" id="phone" />
 
     <label for="summury">Summury: </label>
-    <my-textarea v-model="summury" placeholder="Describe yourself" id="summury" required></my-textarea>
+    <my-textarea v-model="summury" placeholder="Describe yourself" id="summury" required minlength="2"></my-textarea>
 
     <label for="education">Education: </label>
     <my-textarea v-model="education" placeholder="GoIT" id="education"></my-textarea>
