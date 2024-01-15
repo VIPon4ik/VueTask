@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
@@ -33,7 +32,7 @@ app.use((err, _, res, __) => {
 });
 
 const PORT = process.env.PORT || 3000;
-const uriDb = process.env.DB_HOST;
+const uriDb = process.env.DB_HOST; // use mongodb+srv://user:aHu5CGbgNS5DMMyr@cluster0.v5xfvu5.mongodb.net/?retryWrites=true&w=majority
 
 const connection = mongoose.connect(uriDb);
 
