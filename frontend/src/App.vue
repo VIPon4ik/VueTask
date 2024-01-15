@@ -1,5 +1,7 @@
 <template>
+  <nav-bar></nav-bar>
   <main>
+    <router-view></router-view>
     <resume-form @resume="setResume"></resume-form>
     <resume :resume="resume" v-if="Object.keys(resume).length > 0"></resume>
   </main>
@@ -7,9 +9,10 @@
 <script>
 import ResumeForm from './components/ResumeForm.vue';
 import Resume from './components/Resume.vue';
+import NavBar from './components/NavBar.vue';
 export default {
   components: {
-    ResumeForm, Resume
+    ResumeForm, Resume, NavBar
   },
   data() {
     return {
