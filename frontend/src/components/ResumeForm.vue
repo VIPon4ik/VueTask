@@ -64,10 +64,13 @@ export default {
         experience: this.experience,
         skills: this.skills
       }
-
-      await axios.post('http://localhost:3200/api/resumes/', {
-        resume: this.resume,
-      })
+      try {
+        await axios.post('http://localhost:3200/api/resumes/', {
+          resume: this.resume,
+        })
+      } catch(e) {
+        console.log(e);
+      }
 
       this.$emit('resume', this.resume)
       this.skills = []
