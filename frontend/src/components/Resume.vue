@@ -40,11 +40,19 @@ export default {
 </script>
 <style scoped>
 .container {
+  margin: 0 auto;
   margin-top: 40px;
-  padding: 40px 120px;
+  padding: 40px 20px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    padding: 40px 60px;
+  }
 }
 
 section:not(:last-child) {
