@@ -29,6 +29,8 @@ export default {
 
   .link {
     cursor: pointer;
+    text-decoration: none;
+    color: rgb(61, 61, 61);
   }
 
   .link:hover {
