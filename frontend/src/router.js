@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import FormPage from "../pages/FormPage.vue";
-import ResumesPage from "../pages/ResumesPage.vue";
+import FormPage from "@/pages/FormPage.vue";
+import ResumesPage from "@/pages/ResumesPage.vue";
 
 const routes = [
     {
