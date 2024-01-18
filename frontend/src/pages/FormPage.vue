@@ -3,8 +3,8 @@
   <resume :resume="resume" v-if="Object.keys(resume).length > 0"></resume>
 </template>
 <script>
-import ResumeForm from '../components/ResumeForm.vue';
-import Resume from '../components/Resume.vue';
+import ResumeForm from '../views/ResumeForm.vue';
+import Resume from '@/components/Resume.vue';
 export default {
   components: {
     ResumeForm, Resume

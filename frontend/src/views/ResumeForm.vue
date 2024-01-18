@@ -31,6 +31,10 @@
   </form>
 </template>
 <script>
+import MyButton from '@/components/MyButton.vue';
+import MyInput from '@/components/MyInput.vue';
+import MyMultiselect from '@/components/MyMultiselect.vue';
+import MyTextarea from '@/components/MyTextarea.vue';
 import axios from 'axios';
 export default {
   data() {
@@ -76,7 +80,10 @@ export default {
       this.skills = []
       e.target.reset()
     }
-  }
+  },
+   components: {
+    MyButton, MyInput, MyMultiselect, MyTextarea,
+   }
 }
 </script>
 <style scoped>

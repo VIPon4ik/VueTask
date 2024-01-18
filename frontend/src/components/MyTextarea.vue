@@ -1,5 +1,5 @@
 <template>
-  <textarea :value="modelValue" @change="handleChange">
+  <textarea :value="modelValue" @change="changeTextarea">
   </textarea>
 </template>
 <script>
@@ -12,7 +12,7 @@ export default {
     }
   },
   methods: {
-    handleChange(e) {
+    changeTextarea(e) {
       this.$emit('update:modelValue', e.target.value);
     }
   }
