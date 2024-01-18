@@ -14,7 +14,7 @@
     <label for="phone">Phone:</label>
     <my-input v-model="phone" placeholder="+(380) 95 154 0139" id="phone" />
 
-    <label for="summury">Summury: </label>
+    <label for="summury">*Summury: </label>
     <my-textarea v-model="summury" placeholder="Describe yourself" id="summury" required minlength="2"></my-textarea>
 
     <label for="education">Education: </label>

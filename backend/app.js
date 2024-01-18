@@ -31,7 +31,7 @@ app.use((err, _, res, __) => {
     });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3200;
 const uriDb = process.env.DB_HOST; // use 'mongodb+srv://user:aHu5CGbgNS5DMMyr@cluster0.v5xfvu5.mongodb.net/?retryWrites=true&w=majority'
 
 const connection = mongoose.connect(uriDb);
